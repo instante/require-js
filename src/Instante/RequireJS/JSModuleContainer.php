@@ -118,7 +118,7 @@ class JSModuleContainer
     {
         $dependencies = $this->getDependencies();
         if (!isset($dependencies[$moduleName])) {
-            throw new \Exception('Unknown JS module [' . $moduleName . ']. Try to regenerate JS dependency tree.');
+            return; // unknown 3rd party module
         }
 
         foreach ($dependencies[$moduleName] as $moduleDependency) {
