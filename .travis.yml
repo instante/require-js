@@ -1,8 +1,5 @@
 language: php
 
-env:
-  - NETTE=default
-
 php:
   - 5.4
   - 5.5
@@ -10,7 +7,6 @@ php:
   - 7
 
 before_script:
-  - "php tests/prepare-composer.php"
   - composer self-update
   - composer install --no-interaction --prefer-source --dev
   - ./vendor/bin/parallel-lint -e php,phpt --exclude vendor .
