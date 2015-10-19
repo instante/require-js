@@ -1,6 +1,6 @@
 <?php
 
-namespace InstanteTests\RequireJS;
+namespace Instante\Tests\RequireJS;
 
 use Instante\RequireJS\JSModuleContainer;
 use Tester\Assert;
@@ -19,7 +19,7 @@ class JSModuleContainerTest extends TestCase
         $c->configureModule('unused', ['this is not used']);
         $modules = $c->getModules();
         Assert::same(1, count(array_filter($modules, function($pair) {
-            return isset($pair['baz']) && count($pair['baz'] === 0);
+            return isset($pair['baz']) && count($pair['baz']) === 0;
         })), "Module with no config loaded with empty array config");
         Assert::same('foobarConfig',
             array_slice(array_filter($modules, function($pair) {
