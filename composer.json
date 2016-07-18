@@ -15,6 +15,9 @@
         "nette/utils": "adds better compatibility support to decoding json",
         "tracy/tracy": "adds information about loaded modules into Tracy debug bar"
     },
+    "require": {
+        "instante/ui": "~1.0"
+    },
     "require-dev": {
         "nette/tester": "@dev",
         "jakub-onderka/php-parallel-lint": "~0.6",
