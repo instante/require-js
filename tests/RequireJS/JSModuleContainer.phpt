@@ -2,12 +2,12 @@
 
 namespace Instante\Tests\RequireJS;
 
-use Instante\RequireJS\JSModuleContainer;
+use Instante\RequireJS\JsModuleContainer;
 use Tester\Assert;
 
 require_once __DIR__ . '/../bootstrap.php';
 
-$c = new JSModuleContainer(__DIR__ . '/deps.json');
+$c = new JsModuleContainer(__DIR__ . '/deps.json');
 $c->useModule('foo', ['fooConfig']);
 $c->useModule('baz');
 $c->configureModule('foobar', function () { return 'foobarConfig'; });

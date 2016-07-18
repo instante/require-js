@@ -6,7 +6,7 @@ namespace Instante\RequireJS;
 use Nette\Utils\Json;
 use Tracy\Debugger;
 
-class JSModuleContainer
+class JsModuleContainer
 {
 
     /** @var  string */
@@ -39,7 +39,7 @@ class JSModuleContainer
     /**
      * @param string $moduleName
      * @param array|callable $dataOrConfigurator
-     * @return self
+     * @return JsModuleContainer
      */
     public function configureModule($moduleName, $dataOrConfigurator)
     {
@@ -53,7 +53,7 @@ class JSModuleContainer
     /**
      * @param string $moduleName
      * @param array|callable $dataOrConfigurator
-     * @return self
+     * @return JsModuleContainer
      */
     public function useModule($moduleName, $dataOrConfigurator = NULL)
     {

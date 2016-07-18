@@ -3,7 +3,7 @@
 namespace Instante\RequireJS\Components;
 
 use Instante\Application\UI\Control;
-use Instante\RequireJS\JSModuleContainer;
+use Instante\RequireJS\JsModuleContainer;
 
 class JsLoader extends Control
 {
@@ -17,7 +17,7 @@ class JsLoader extends Control
     /** @var bool @template */
     private $source;
 
-    /** @var JSModuleContainer @template */
+    /** @var JsModuleContainer @template */
     private $jsContainer;
 
     /** @var array @template */
@@ -26,9 +26,9 @@ class JsLoader extends Control
     /**
      * @param bool $source - use source assets? (for development purposes)
      * @param array $paths
-     * @param JSModuleContainer $jsModuleContainer
+     * @param JsModuleContainer $jsModuleContainer
      */
-    public function __construct($source, array $paths, JSModuleContainer $jsModuleContainer)
+    public function __construct($source, array $paths, JsModuleContainer $jsModuleContainer)
     {
         parent::__construct();
         $this->source = $source;

@@ -2,7 +2,7 @@
 
 namespace Instante\RequireJS\Components;
 
-use Instante\RequireJS\JSModuleContainer;
+use Instante\RequireJS\JsModuleContainer;
 
 class JsLoaderFactory
 {
@@ -10,7 +10,7 @@ class JsLoaderFactory
     /** @var bool */
     private $dist;
 
-    /** @var JSModuleContainer */
+    /** @var JsModuleContainer */
     private $jsModuleContainer;
 
     /** @var array */
@@ -19,9 +19,9 @@ class JsLoaderFactory
     /**
      * @param bool $dist - use compiled dist files (false ~ use source js files from frontend/js)
      * @param array $paths (source, requirejs, dist)
-     * @param JSModuleContainer $jsModuleContainer
+     * @param JsModuleContainer $jsModuleContainer
      */
-    public function __construct($dist = TRUE, array $paths = [], JSModuleContainer $jsModuleContainer)
+    public function __construct($dist = TRUE, array $paths = [], JsModuleContainer $jsModuleContainer)
     {
         $this->dist = $dist;
         $this->jsModuleContainer = $jsModuleContainer;
