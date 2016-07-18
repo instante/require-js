@@ -4,9 +4,6 @@ namespace Instante\RequireJS\Components;
 
 use Instante\RequireJS\JSModuleContainer;
 
-/**
- * Temporarily residing in skeleton - will move to frontend package in future
- */
 class JsLoaderFactory
 {
 
@@ -28,15 +25,6 @@ class JsLoaderFactory
     {
         $this->dist = $dist;
         $this->jsModuleContainer = $jsModuleContainer;
-        if (!isset($paths['dist'])) {
-            $paths['dist'] = 'js/';
-        }
-        if (!isset($paths['sources'])) {
-            $paths['sources'] = '../frontend/src/js/';
-        }
-        if (!isset($paths['requirejs'])) {
-            $paths['requirejs'] = '../frontend/bower_components/requirejs/require.js';
-        }
         $this->paths = $paths;
     }
 

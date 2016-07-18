@@ -5,11 +5,15 @@ namespace Instante\RequireJS\Components;
 use Instante\Application\UI\Control;
 use Instante\RequireJS\JSModuleContainer;
 
-/**
- * Temporarily residing in skeleton - will move to frontend package in future
- */
 class JsLoader extends Control
 {
+    private static $pathDefaults
+        = [
+            'dist' => 'js/',
+            'sources' => '../frontend/src/js/',
+            'requirejs' => '../frontend/bower_components/requirejs/require.js',
+        ];
+
     /** @var bool @template */
     private $source;
 
@@ -29,7 +33,7 @@ class JsLoader extends Control
         parent::__construct();
         $this->source = $source;
         $this->jsContainer = $jsModuleContainer;
-        $this->paths = $paths;
+        $this->paths = $paths + static::$pathDefaults;
     }
 
     public function beforeRender($args = [])
