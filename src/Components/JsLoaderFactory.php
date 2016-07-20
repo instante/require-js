@@ -8,7 +8,7 @@ class JsLoaderFactory
 {
 
     /** @var bool */
-    private $dist;
+    private $source;
 
     /** @var JsModuleContainer */
     private $jsModuleContainer;
@@ -17,13 +17,13 @@ class JsLoaderFactory
     private $paths;
 
     /**
-     * @param bool $dist - use compiled dist files (false ~ use source js files from frontend/js)
+     * @param bool $source - use source js files from frontend/js (false ~ use compiled .min.js files)
      * @param array $paths (source, requirejs, dist)
      * @param JsModuleContainer $jsModuleContainer
      */
-    public function __construct($dist = TRUE, array $paths = [], JsModuleContainer $jsModuleContainer)
+    public function __construct($source = FALSE, array $paths = [], JsModuleContainer $jsModuleContainer)
     {
-        $this->dist = $dist;
+        $this->source = $source;
         $this->jsModuleContainer = $jsModuleContainer;
         $this->paths = $paths;
     }
@@ -31,6 +31,6 @@ class JsLoaderFactory
     /** @return JsLoader */
     public function create()
     {
-        return new JsLoader($this->dist, $this->paths, $this->jsModuleContainer);
+        return new JsLoader($this->source, $this->paths, $this->jsModuleContainer);
     }
 }

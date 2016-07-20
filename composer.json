@@ -22,7 +22,11 @@
         "nette/tester": "@dev",
         "jakub-onderka/php-parallel-lint": "~0.6",
         "nette/utils": "@dev",
-        "tracy/tracy": "@dev"
+        "tracy/tracy": "@dev",
+        "instante/php-test-suite": "@dev",
+        "nette/security": "@dev",
+        "latte/latte": "@dev",
+        "nette/reflection": "@dev"
     },
     "autoload": {
         "psr-4": {
