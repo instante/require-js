@@ -9,3 +9,6 @@
 {else}
     <script src="{$basePath}/{$paths['dist']}/{$module}.min.js"></script>
 {/if}
+<script n:if="$debugDisabledExplicitly">
+    console.log('Debug mode is available but disabled. Follow the link to enable:', {plink //this, debugMode => yes});
+</script>

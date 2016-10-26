@@ -23,17 +23,22 @@ class JsLoader extends Control
     /** @var array @template */
     private $paths;
 
+    /** @var bool @template */
+    private $debugDisabledExplicitly;
+
     /**
      * @param bool $source - use source assets? (for development purposes)
+     * @param bool $debugDisabledExplicitly
      * @param array $paths
      * @param JsModuleContainer $jsModuleContainer
      */
-    public function __construct($source, array $paths, JsModuleContainer $jsModuleContainer)
+    public function __construct($source, $debugDisabledExplicitly, array $paths, JsModuleContainer $jsModuleContainer)
     {
         parent::__construct();
         $this->source = $source;
         $this->jsContainer = $jsModuleContainer;
         $this->paths = $paths + static::$pathDefaults;
+        $this->debugDisabledExplicitly = $debugDisabledExplicitly;
     }
 
     public function beforeRender($args = [])

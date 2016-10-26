@@ -12,9 +12,10 @@ require_once __DIR__ . '/../../utils/ControlTester.php';
 
 $jsmc = new JsModuleContainer(__DIR__ . '/foobarbaz.json');
 $jsmc->useModule('foo-bar-baz');
-$jsLoader = (new JsLoaderFactory(TRUE, FALSE, [], $jsmc))->create();
+$jsLoader = (new JsLoaderFactory(FALSE, TRUE, [], $jsmc))->create();
 
 $result = ControlTester::test($jsLoader);
 
-Assert::match('~bootstrap\.js~', $result->getResponseBody());
+Assert::match('~script\.min\.js~', $result->getResponseBody());
 Assert::match('~foo-bar-baz~', $result->getResponseBody());
+Assert::contains('Debug mode is available but disabled', $result->getResponseBody());

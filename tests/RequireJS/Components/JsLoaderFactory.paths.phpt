@@ -12,10 +12,10 @@ require_once __DIR__ . '/../../utils/ControlTester.php';
 
 $jsmc = new JsModuleContainer(__DIR__ . '/foobarbaz.json');
 
-$jsLoader = (new JsLoaderFactory(TRUE, [], $jsmc))->create();
+$jsLoader = (new JsLoaderFactory(TRUE, FALSE, [], $jsmc))->create();
 $jsLoaderX = new Expose($jsLoader);
 Assert::equal($jsLoaderX->pathDefaults, $jsLoaderX->paths);
 
-$jsLoader = (new JsLoaderFactory(TRUE, $p = ['dist' => 'd', 'sources' => 's', 'requirejs' => 'r'], $jsmc))->create();
+$jsLoader = (new JsLoaderFactory(TRUE, FALSE, $p = ['dist' => 'd', 'sources' => 's', 'requirejs' => 'r'], $jsmc))->create();
 $jsLoaderX = new Expose($jsLoader);
 Assert::equal($p, $jsLoaderX->paths);
