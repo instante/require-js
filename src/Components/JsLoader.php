@@ -9,8 +9,8 @@ class JsLoader extends Control
 {
     private static $pathDefaults
         = [
-            'dist' => 'js/',
-            'sources' => '../frontend/src/js/',
+            'dist' => 'js',
+            'sources' => '../frontend/src/js',
             'requirejs' => '../frontend/bower_components/requirejs/require.js',
         ];
 

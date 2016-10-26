@@ -2,10 +2,10 @@
 {if $source}
     <script data-main="{$basePath}/{$paths['sources']}/bootstrap.js"
             src="{$basePath}/{$paths['requirejs']}"></script>
-    <script src="{$basePath}/../frontend/src/js/require-config.js"></script>
+    <script src="{$basePath}/{$paths['sources']}/require-config.js"></script>
     <script>
         window.__basePath = {$basePath};
     </script>
 {else}
-    <script src="{$basePath}/{$paths['dist']}{$module}.min.js"></script>
+    <script src="{$basePath}/{$paths['dist']}/{$module}.min.js"></script>
 {/if}
